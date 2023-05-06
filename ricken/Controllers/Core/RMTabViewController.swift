@@ -8,7 +8,7 @@
 import UIKit
 
 final class RMTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTabs()
@@ -45,6 +45,6 @@ final class RMTabBarController: UITabBarController {
             animated: true
         )
     }
- 
+    
 }
 
