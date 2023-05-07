@@ -35,9 +35,7 @@ final class RMRequest {
                 return "\($0.name)=\(value)"
             }).joined(separator: "&")
             
-            pathComponents.forEach {
-                string += "/\($0)"
-            }
+            string += argumentString
         }
         return string
     }
@@ -45,6 +43,8 @@ final class RMRequest {
     public var url: URL? {
         return URL(string: urlString)
     }
+    
+    public let httpMethod = "GET"
     
     public init(
         endPoint: RMEndpoint,
@@ -55,4 +55,8 @@ final class RMRequest {
         self.pathComponents = pathComponents
         self.queryParameters = queryParameters
     }
+}
+
+extension RMRequest {
+    static let listCharactersRequest = RMRequest(endPoint: .character)
 }

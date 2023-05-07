@@ -10,6 +10,10 @@
 		955258912A069CE8002FC30E /* RMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955258902A069CE8002FC30E /* RMService.swift */; };
 		955258932A069D02002FC30E /* RMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955258922A069D02002FC30E /* RMRequest.swift */; };
 		955258952A069D9B002FC30E /* RMEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955258942A069D9B002FC30E /* RMEndpoint.swift */; };
+		9552589B2A0779D9002FC30E /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552589A2A0779D9002FC30E /* RMGetAllCharactersResponse.swift */; };
+		9552589D2A078D9C002FC30E /* CharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552589C2A078D9C002FC30E /* CharacterListViewViewModel.swift */; };
+		9552589F2A078E0A002FC30E /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552589E2A078E0A002FC30E /* CharacterListView.swift */; };
+		955258A12A07AF07002FC30E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955258A02A07AF07002FC30E /* Extensions.swift */; };
 		955DEA172A05337A00B0067D /* RMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955DEA162A05337A00B0067D /* RMLocation.swift */; };
 		955DEA192A05338700B0067D /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955DEA182A05338700B0067D /* RMCharacter.swift */; };
 		955DEA1B2A05339100B0067D /* RMEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955DEA1A2A05339100B0067D /* RMEpisode.swift */; };
@@ -28,6 +32,10 @@
 		955258902A069CE8002FC30E /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
 		955258922A069D02002FC30E /* RMRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRequest.swift; sourceTree = "<group>"; };
 		955258942A069D9B002FC30E /* RMEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEndpoint.swift; sourceTree = "<group>"; };
+		9552589A2A0779D9002FC30E /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
+		9552589C2A078D9C002FC30E /* CharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewViewModel.swift; sourceTree = "<group>"; };
+		9552589E2A078E0A002FC30E /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		955258A02A07AF07002FC30E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		955DEA162A05337A00B0067D /* RMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocation.swift; sourceTree = "<group>"; };
 		955DEA182A05338700B0067D /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		955DEA1A2A05339100B0067D /* RMEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisode.swift; sourceTree = "<group>"; };
@@ -55,12 +63,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		955DEA102A05325600B0067D /* Models */ = {
+		955258972A077941002FC30E /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
 				955DEA162A05337A00B0067D /* RMLocation.swift */,
 				955DEA182A05338700B0067D /* RMCharacter.swift */,
 				955DEA1A2A05339100B0067D /* RMEpisode.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		955258992A07796C002FC30E /* ApiResponseTypes */ = {
+			isa = PBXGroup;
+			children = (
+				9552589A2A0779D9002FC30E /* RMGetAllCharactersResponse.swift */,
+			);
+			path = ApiResponseTypes;
+			sourceTree = "<group>";
+		};
+		955DEA102A05325600B0067D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				955258992A07796C002FC30E /* ApiResponseTypes */,
+				955258972A077941002FC30E /* DataTypes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -68,6 +93,7 @@
 		955DEA112A05325D00B0067D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9552589E2A078E0A002FC30E /* CharacterListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -75,6 +101,7 @@
 		955DEA122A05326700B0067D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9552589C2A078D9C002FC30E /* CharacterListViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -86,6 +113,7 @@
 				957624012A04D3EB00C3CB99 /* LaunchScreen.storyboard */,
 				957623F62A04D3EA00C3CB99 /* AppDelegate.swift */,
 				957623F82A04D3EA00C3CB99 /* SceneDelegate.swift */,
+				955258A02A07AF07002FC30E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -224,13 +252,17 @@
 				955DEA1B2A05339100B0067D /* RMEpisode.swift in Sources */,
 				957623FB2A04D3EA00C3CB99 /* RMTabViewController.swift in Sources */,
 				957623F72A04D3EA00C3CB99 /* AppDelegate.swift in Sources */,
+				9552589B2A0779D9002FC30E /* RMGetAllCharactersResponse.swift in Sources */,
 				957623F92A04D3EA00C3CB99 /* SceneDelegate.swift in Sources */,
+				9552589F2A078E0A002FC30E /* CharacterListView.swift in Sources */,
 				955DEA172A05337A00B0067D /* RMLocation.swift in Sources */,
 				955DEA252A05349100B0067D /* RMSettingsViewController.swift in Sources */,
+				9552589D2A078D9C002FC30E /* CharacterListViewViewModel.swift in Sources */,
 				955258912A069CE8002FC30E /* RMService.swift in Sources */,
 				955DEA192A05338700B0067D /* RMCharacter.swift in Sources */,
 				955258952A069D9B002FC30E /* RMEndpoint.swift in Sources */,
 				955DEA1F2A05344700B0067D /* RMCharacterViewController.swift in Sources */,
+				955258A12A07AF07002FC30E /* Extensions.swift in Sources */,
 				955258932A069D02002FC30E /* RMRequest.swift in Sources */,
 				955DEA212A05346F00B0067D /* RMEpisodeViewController.swift in Sources */,
 			);
